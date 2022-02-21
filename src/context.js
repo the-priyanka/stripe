@@ -4,33 +4,33 @@ const AppContext = React.createContext();
 
 export const AppProvider = (props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(true);
 
   const openSidebar = () => {
-    isSidebarOpen(true);
+    setIsSidebarOpen(true);
   };
 
   const closeSidebar = () => {
-    isSidebarOpen(false);
+    setIsSidebarOpen(false);
   };
 
-  const openModal = () => {
-    isModalOpen(true);
+  const openSubmenu = () => {
+    setIsSubmenuOpen(true);
   };
 
-  const closeModal = () => {
-    isModalOpen(false);
+  const closeSubmenu = () => {
+    setIsSubmenuOpen(false);
   };
 
   return (
     <AppContext.Provider
       value={{
         isSidebarOpen,
-        isModalOpen,
+        isSubmenuOpen,
         openSidebar,
         closeSidebar,
-        openModal,
-        closeModal,
+        openSubmenu,
+        closeSubmenu,
       }}
     >
       {props.children}
